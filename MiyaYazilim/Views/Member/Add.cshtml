@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Add</title>
+</head>
+<body>
+    <div>
+        <div class="form-group" id="myform">
+
+            <form class="form-group" action="/Member/Add" method="post">
+
+                <div class="form-control">
+                    <label>firstname</label>
+                    <input type="text" name="first_name" id="first_name" />
+                </div>
+                <div class="form-control">
+                    <label>last name</label>
+                    <input type="text" name="last_name" />
+                </div>
+
+
+
+                <button class="btn btn-danger" onclick="ekle()" type="submit"> Add </button>
+
+            </form>
+        </div>
+    </div>
+    <script>
+      function ekle() {
+          debugger;
+      $.ajax({
+          url: "https://reqres.in/api/users",
+          type: "POST",
+          data: {
+
+              name: "morpheus",
+              job: "leader"
+
+          },
+          success: function (response) {
+              debugger;
+              console.log(response);
+
+          }
+
+
+      });
+      }
+    </script>
+
+</body>
+</html>
